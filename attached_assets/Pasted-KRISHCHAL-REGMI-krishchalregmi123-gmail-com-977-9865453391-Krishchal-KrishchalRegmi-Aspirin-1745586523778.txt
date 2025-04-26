@@ -1,0 +1,72 @@
+KRISHCHAL REGMI
+krishchalregmi123@gmail.com | (+977) 9865453391
+@Krishchal KrishchalRegmi
+Aspiring software developer with expertise in full-stack development (MERN) and handson experience building scalable applications and RESTful APIs. Dedicated to problemsolving, team collaboration, and continuous learning. Passionate about exploring
+emerging technologies to deliver innovative solutions.
+EXPERIENCE
+Backend Developer ( Internship )
+Pixpoint Solution Pvt. Ltd.
+2024 – Present
+ Developed web applications with MERN stack
+ Developed scalable backend system with Node.js, Express.js, REST API
+ Designed database with MongoDB and Postgress
+ Implemented OAuth, Redis following industry standard practices
+SKILLS
+❖ Programming Languages : Javascript(ES6+), Typescript, Python, SQL, C++
+❖ Backend Technologies :Node, Express, Nest, REST APIs, OAuth, WebSockets
+❖ Frontend Technologies : React.js
+❖ Database: MongoDB, PostgreSQL, Redis
+❖ Tools & Platforms : Github Actions, Docker
+❖ Other Skills : Team collaboration, Problem Solving/Debugging , Competetive
+❖ Research Intrests : Data Science, Machine Learning, GenerativeAI
+EDUCATION
+❖ BSC.CSIT | Ambition College
+❖ +2 Science ( National Institute of Science & Technology- NIST )
+
+PROJECTS
+ Automated Interview System (Major Project)
+Developed a web application to automate the interview process with the following
+Key Features
+ Authentication with JWT with handling cookies
+ Recommend questions tailored to expertise using content-based filtering.
+ Transcribed audio responses with high accuracy using Whisper AI.
+ Compared transcriptions with predefined answers via cosine similarity.
+ Generated detailed reports for candidate dashboard assessments.
+Technologies Used : React.js, Node.js, RabbitMQ, Python (Flask), MongoDB, NumPy, NLTK &
+Whisper AI Model.
+ GitHub: InterviewProAI
+ MERN Stack Blog Application (Major Project)
+Developed a full-stack blog publishing platform with robust features and role-based access
+control using the MERN stack.
+Key Features
+ Authentication: User login/signup, Google OAuth integration, and forgot password
+functionality.
+ Blog Management: Users can create, edit, and delete blogs with a rich text editor,
+categorize blogs, and upload images.
+ User Interactions: Search blogs by title, author, or category; follow/unfollow users; view
+followers/following.
+ Profile Management: View/edit profiles, track followers/following, and change
+passwords.
+ Admin Controls: Manage categories, block/unblock users, assign roles, and moderate
+blogs with notifications.
+Technologies Used: MongoDB, Express.js, React.js, Node.js.
+ GitHub : uBlogIt
+Other Projects:
+ Ecommerce Backend API
+A backend project for an e-commerce platform, ensuring secure and efficient API
+services to handle core functionalities with admin access .
+Key Features
+ Authentication with JWT
+ Product Management : Filtering product, Adding Product, Updating Product,
+Deleting Product with admin role
+ User Management : Admin access with User functionalities.
+ GitHub : Ecom_Backend
+ Real Time Chat App
+Learned to developed a real-time event driven chat application leveraging WebSocket
+technology, providing full duplex communication between users. The application offers
+to chat with multiple users within a network with real time synchronization.
+ Backend: Node.js with Express.js for server-side logic.
+ WebSockets: Socket.IO for real-time, event-driven communication.
+ Frontend: React for building an simple interactive interface for chat.
+ State Management: Context API for efficient client-side state handling.
+ GitHub : Real_Time_chat

@@ -3,318 +3,673 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- --------- UNICONS ---------- -->
+    <title>Krishchal Regmi - Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website of Krishchal Regmi, Full Stack Developer with expertise in MERN stack"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link
       rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <!-- --------- CSS ---------- -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-
-    <!-- --------- FAVICON ---------- -->
-    <link
-      rel="shortcut icon"
-      href="assets/images/favicon.png"
-      type="image/x-icon"
-    />
-
-    <title>Krishchal Regmi</title>
   </head>
-  <body>
-    <div class="container">
-      <!-- --------------- HEADER --------------- -->
-      <nav id="header">
-        <div class="nav-logo">
-          <p class="nav-name">Hi</p>
-          <span>.</span>
+  <body class="light-mode">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>Krishchal<span class="accent">Regmi</span></h1>
         </div>
-        <div class="nav-menu" id="myNavMenu">
-          <ul class="nav_menu_list">
-            <li class="nav_list">
-              <a href="#home" class="nav-link active-link">Home</a>
-              <div class="circle"></div>
-            </li>
-            <li class="nav_list">
-              <a href="#about" class="nav-link">About</a>
-              <div class="circle"></div>
-            </li>
-            <li class="nav_list">
-              <a href="#projects" class="nav-link">Projects</a>
-              <div class="circle"></div>
-            </li>
-            <li class="nav_list">
-              <a href="#contact" class="nav-link">Contact</a>
-              <div class="circle"></div>
-            </li>
-          </ul>
+        <div class="nav-links">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="blogs.html" class="nav-link">Blogs</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <div class="nav-button">
-          <button class="btn">
-            Download CV <i class="uil uil-file-alt"></i>
+        <div class="theme-toggle">
+          <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
           </button>
         </div>
-        <div class="nav-menu-btn">
-          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        <div class="menu-toggle">
+          <button id="menu-toggle-btn" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </nav>
+    </header>
 
-      <!-- -------------- MAIN ---------------- -->
-      <main class="wrapper">
-        <!-- -------------- FEATURED BOX ---------------- -->
-        <section class="featured-box" id="home">
-          <div class="featured-text">
-            <div class="featured-text-card">
-              <span>Krishchal Regmi</span>
+    <main>
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <div class="hero-image">
+            <div class="profile-image">
+              <!-- Profile image placeholder - using uploaded image -->
+              <div class="profile-placeholder"></div>
             </div>
-            <div class="featured-name">
-              <p>I'm <span class="typedText"></span></p>
+          </div>
+          <div class="hero-text">
+            <h1>Hi, I'm <span class="accent">Krishchal Regmi</span></h1>
+            <h2>Full Stack Developer</h2>
+            <p>
+              Aspiring software developer with expertise in full-stack
+              development (MERN) and hands-on experience building scalable
+              applications and RESTful APIs.
+            </p>
+            <div class="hero-cta">
+              <a href="#projects" class="btn primary-btn">View Projects</a>
+              <a href="#contact" class="btn secondary-btn">Contact Me</a>
             </div>
-            <div class="featured-text-info">
-              <p>
-                Developer with a passion for creating stunning and user-friendly
-                websites.
-              </p>
-            </div>
-            <div class="featured-text-btn">
-              <button class="btn blue-btn">Hire Me</button>
-              <button class="btn">
-                Download CV <i class="uil uil-file-alt"></i>
-              </button>
-            </div>
-            <div class="social_icons">
-              <a
-                href="https://www.instagram.com/krishchal_regmi/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="icon"><i class="uil uil-instagram"></i></div>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/krishchal-regmi-744a41265/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-              </a>
-              <a
-                href="https://www.facebook.com/krischal.regmi"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="icon"><i class="uil uil-facebook"></i></div>
-              </a>
+            <div class="social-links">
               <a
                 href="https://github.com/Krishchal"
                 target="_blank"
-                rel="noopener noreferrer"
+                aria-label="GitHub profile"
               >
-                <div class="icon"><i class="uil uil-github-alt"></i></div>
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/krishchal-regmi/"
+                target="_blank"
+                aria-label="LinkedIn profile"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/krishchal_regmi_"
+                target="_blank"
+                aria-label="Instagram profile"
+              >
+                <i class="fab fa-instagram"></i>
               </a>
             </div>
           </div>
-          <div class="featured-image">
-            <div class="image">
-              <img src="assets/images/myProfilePic.jpg" alt="avatar" />
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Dedicated to problem-solving, team collaboration, and continuous
+              learning. Passionate about exploring emerging technologies to
+              deliver innovative solutions.
+            </p>
+            <p>
+              My expertise lies in full-stack development using the MERN stack.
+              I have experience in building scalable applications and RESTful
+              APIs, and I'm always eager to learn new technologies.
+            </p>
+            <p>
+              Currently working as a Backend Developer Intern at Pixpoint
+              Solution Pvt. Ltd., where I'm enhancing my skills in Node.js,
+              Express.js, and database management.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section">
+        <div class="section-header">
+          <h2>Skills</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="skills-content">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="JavaScript">
+                <div class="skill-icon">
+                  <i class="fab fa-js"></i>
+                </div>
+                <h4>JavaScript (ES6+)</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="TypeScript">
+                <div class="skill-icon">
+                  <i class="fab fa-js"></i>
+                </div>
+                <h4>TypeScript</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="Python">
+                <div class="skill-icon">
+                  <i class="fab fa-python"></i>
+                </div>
+                <h4>Python</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="SQL">
+                <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h4>SQL</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="C++">
+                <div class="skill-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h4>C++</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 70%"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="scroll-icon-box">
-            <a href="#about" class="scroll-btn">
-              <i class="uil uil-mouse-alt"></i>
-              <p>Scroll Down</p>
-            </a>
+
+          <div class="skill-category">
+            <h3>Backend Technologies</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="Node.js">
+                <div class="skill-icon">
+                  <i class="fab fa-node-js"></i>
+                </div>
+                <h4>Node.js</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="Express.js">
+                <div class="skill-icon">
+                  <i class="fab fa-node-js"></i>
+                </div>
+                <h4>Express.js</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="REST APIs">
+                <div class="skill-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h4>REST APIs</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="OAuth">
+                <div class="skill-icon">
+                  <i class="fas fa-key"></i>
+                </div>
+                <h4>OAuth</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="WebSockets">
+                <div class="skill-icon">
+                  <i class="fas fa-plug"></i>
+                </div>
+                <h4>WebSockets</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
-        <!-- -------------- ABOUT BOX ---------------- -->
-        <section class="section" id="about">
-          <div class="top-header">
-            <h1>About Me</h1>
+
+          <div class="skill-category">
+            <h3>Frontend Technologies</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="React.js">
+                <div class="skill-icon">
+                  <i class="fab fa-react"></i>
+                </div>
+                <h4>React.js</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="about-info">
-                <h3>My introduction</h3>
+
+          <div class="skill-category">
+            <h3>Database</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="MongoDB">
+                <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h4>MongoDB</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="PostgreSQL">
+                <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h4>PostgreSQL</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="Redis">
+                <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h4>Redis</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="GitHub Actions">
+                <div class="skill-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <h4>GitHub Actions</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-skill="Docker">
+                <div class="skill-icon">
+                  <i class="fab fa-docker"></i>
+                </div>
+                <h4>Docker</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-section">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="experience-content">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Backend Developer (Internship)</h3>
+                  <span class="timeline-date">2024 - Present</span>
+                </div>
+                <h4>Pixpoint Solution Pvt. Ltd.</h4>
+                <ul class="timeline-details">
+                  <li>Developed web applications with MERN stack</li>
+                  <li>
+                    Developed scalable backend system with Node.js, Express.js,
+                    REST API
+                  </li>
+                  <li>Designed database with MongoDB and PostgreSQL</li>
+                  <li>
+                    Implemented OAuth, Redis following industry standard
+                    practices
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="education-section">
+        <div class="section-header">
+          <h2>Education</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="education-content">
+          <div class="education-item">
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="education-details">
+              <h3>BSC.CSIT</h3>
+              <h4>Ambition College</h4>
+            </div>
+          </div>
+          <div class="education-item">
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="education-details">
+              <h3>+2 Science</h3>
+              <h4>National Institute of Science & Technology (NIST)</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="projects-content">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Automated Interview System</h3>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Krishchal/InterviewProAi---FullStack"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="assets/docs/InterviewPro_Documentation.pdf"
+                  download="InterviewPro_Documentation.pdf"
+                  class="project-link"
+                >
+                  <i class="fas fa-file-pdf"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>
+                Developed a web application to automate the interview process
+                with AI-powered question recommendation and response evaluation.
+              </p>
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Authentication with JWT with handling cookies</li>
+                <li>
+                  Recommend questions tailored to expertise using content-based
+                  filtering
+                </li>
+                <li>
+                  Transcribed audio responses with high accuracy using Whisper
+                  AI
+                </li>
+                <li>
+                  Compared transcriptions with predefined answers via cosine
+                  similarity
+                </li>
+                <li>
+                  Generated detailed reports for candidate dashboard assessments
+                </li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge">React.js</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">RabbitMQ</span>
+                <span class="tech-badge">Python (Flask)</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">NumPy</span>
+                <span class="tech-badge">NLTK</span>
+                <span class="tech-badge">Whisper AI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>MERN Stack Blog Application</h3>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Krishchal/Full-Stack-Blog-Application-MERN-"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>
+                Developed a full-stack blog publishing platform with robust
+                features and role-based access control using the MERN stack.
+              </p>
+              <h4>Key Features:</h4>
+              <ul>
+                <li>
+                  Authentication: User login/signup, Google OAuth integration,
+                  and forgot password functionality
+                </li>
+                <li>
+                  Blog Management: Users can create, edit, and delete blogs with
+                  a rich text editor, categorize blogs, and upload images
+                </li>
+                <li>
+                  User Interactions: Search blogs by title, author, or category;
+                  follow/unfollow users; view followers/following
+                </li>
+                <li>
+                  Profile Management: View/edit profiles, track
+                  followers/following, and change passwords
+                </li>
+                <li>
+                  Admin Controls: Manage categories, block/unblock users, assign
+                  roles, and moderate blogs with notifications
+                </li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">React.js</span>
+                <span class="tech-badge">Node.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Ecommerce Backend API</h3>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Krishchal/Ecommerce-API-with-Node-Express-MongoDB"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>
+                A backend project for an e-commerce platform, ensuring secure
+                and efficient API services to handle core functionalities with
+                admin access.
+              </p>
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Authentication with JWT</li>
+                <li>
+                  Product Management: Filtering product, Adding Product,
+                  Updating Product, Deleting Product with admin role
+                </li>
+                <li>User Management: Admin access with User functionalities</li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">JWT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Real Time Chat App</h3>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Krishchal/Real-Time-Chat-_-Socket.io-"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>
+                Developed a real-time event driven chat application leveraging
+                WebSocket technology, providing full duplex communication
+                between users. The application offers to chat with multiple
+                users within a network with real time synchronization.
+              </p>
+              <ul>
+                <li>Backend: Node.js with Express.js for server-side logic</li>
+                <li>
+                  WebSockets: Socket.IO for real-time, event-driven
+                  communication
+                </li>
+                <li>
+                  Frontend: React for building a simple interactive interface
+                  for chat
+                </li>
+                <li>
+                  State Management: Context API for efficient client-side state
+                  handling
+                </li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">Socket.IO</span>
+                <span class="tech-badge">React.js</span>
+                <span class="tech-badge">Context API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <h2>Contact Me</h2>
+          <div class="separator"></div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
                 <p>
-                  I am well-versed in cutting edge frameworks and
-                  libraries,which allows me to implement interactive features.
+                  <a href="mailto:krishchalregmi123@gmail.com"
+                    >krishchalregmi123@gmail.com</a
+                  >
                 </p>
-                <div class="about-btn">
-                  <button class="btn">
-                    Download CV <i class="uil uil-import"></i>
-                  </button>
-                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="skills-box">
-                <div class="skills-header">
-                  <h3>Frontend</h3>
-                </div>
-                <div class="skills-list">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>Bootstrap</span>
-                  <span>Tailwind</span>
-                  <span>React</span>
-                </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
               </div>
-              <div class="skills-box">
-                <div class="skills-header">
-                  <h3>Backend</h3>
-                </div>
-                <div class="skills-list">
-                  <span>Node</span>
-                  <span>Python</span>
-                </div>
-              </div>
-              <div class="skills-box">
-                <div class="skills-header">
-                  <h3>Database</h3>
-                </div>
-                <div class="skills-list">
-                  <span>MySQL</span>
-                  <span>MongoDB</span>
-                </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <p><a href="tel:+9779865453391">(+977) 9865453391</a></p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <!-- -------------- PROJECT BOX ---------------- -->
-
-        <section class="section" id="projects">
-          <div class="top-header">
-            <h1>Projects</h1>
-          </div>
-          <div class="project-container">
-            <div class="project-box">
-              <i class="uil uil-briefcase-alt"></i>
-              <h3>Completed</h3>
-              <label>3 Finished Projects</label>
-            </div>
-            <div class="project-box">
-              <i class="uil uil-users-alt"></i>
-              <h3>Clients</h3>
-              <label>3 Happy Clients</label>
-            </div>
-            <div class="project-box">
-              <i class="uil uil-award"></i>
-              <h3>Experience</h3>
-              <label>2 Years in the field</label>
-            </div>
-          </div>
-        </section>
-
-        <!-- -------------- CONTACT BOX ---------------- -->
-
-        <section class="section" id="contact">
-          <div class="top-header">
-            <h1>Get in touch</h1>
-            <span
-              >Lets communicate to take our project next level, contact me
-              here</span
-            >
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="contact-info">
-                <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-text">
+                <h3>GitHub</h3>
                 <p>
-                  <i class="uil uil-envelope"></i> Email:
-                  krishchalregmi123@gmail.com
+                  <a href="https://github.com/Krishchal" target="_blank"
+                    >@Krishchal</a
+                  >
                 </p>
-                <p><i class="uil uil-phone"></i> Ph: +977 9865453391</p>
               </div>
             </div>
-            <div class="col">
-              <div class="form-control">
-                <div class="form-inputs">
-                  <input type="text" class="input-field" placeholder="Name" />
-                  <input type="text" class="input-field" placeholder="Email" />
-                </div>
-                <div class="text-area">
-                  <textarea placeholder="Message"></textarea>
-                </div>
-                <div class="form-button">
-                  <button class="btn">
-                    Send <i class="uil uil-message"></i>
-                  </button>
-                </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-text">
+                <h3>LinkedIn</h3>
+                <p>
+                  <a
+                    href="https://www.linkedin.com/in/krishchal-regmi/"
+                    target="_blank"
+                    >krishchal-regmi</a
+                  >
+                </p>
               </div>
             </div>
           </div>
-        </section>
-      </main>
+          <div class="contact-form">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn primary-btn">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <!-- --------------- FOOTER --------------- -->
-      <footer>
-        <div class="top-footer">
-          <p>Krishchal Regmi</p>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2024 Krishchal Regmi. All rights reserved.</p>
         </div>
-        <div class="middle-footer">
-          <ul class="footer-menu">
-            <li class="footer_menu_list">
-              <a href="#home">Home</a>
-            </li>
-            <li class="footer_menu_list">
-              <a href="#about">About</a>
-            </li>
-            <li class="footer_menu_list">
-              <a href="#projects">Projects</a>
-            </li>
-            <li class="footer_menu_list">
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div class="footer-social-icons">
-          <a
-            href="https://www.instagram.com/krishchal_regmi/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="icon"><i class="uil uil-instagram"></i></div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/krishchal-regmi-744a41265/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-          </a>
-          <a
-            href="https://www.facebook.com/krischal.regmi"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="icon"><i class="uil uil-facebook"></i></div>
-          </a>
-          <a
-            href="https://github.com/Krishchal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="icon"><i class="uil uil-github-alt"></i></div>
-          </a>
-        </div>
-        <div class="bottom-footer">
-          <p>
-            Copyright &copy;
-            <a href="#home" style="text-decoration: none">Krishchal Regmi</a> -
-            All rights reserved
-          </p>
-        </div>
-      </footer>
+      </div>
+    </footer>
+
+    <div class="resume-download">
+      <a
+        href="assets/resume/Krishchal_Regmi_Resume.pdf"
+        download="Krishchal_Regmi_Resume.pdf"
+        class="btn download-btn"
+      >
+        <i class="fas fa-download"></i> Download Resume
+      </a>
     </div>
 
-    <!-- ----- TYPING JS Link ----- -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-    <!-- ----- SCROLL REVEAL JS Link----- -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
   </body>
 </html>

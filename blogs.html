@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishchal Regmi - Blogs</title>
+    <meta name="description" content="Blogs by Krishchal Regmi, Full Stack Developer with expertise in MERN stack">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional Blog Page Specific Styles */
+        .blog-header {
+            padding: 120px 0 50px;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        
+        .blog-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-subtitle {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .blogs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .blog-card {
+            background-color: var(--background-color);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--secondary-background);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-date {
+            font-size: 0.9rem;
+            color: var(--secondary-text-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .blog-excerpt {
+            color: var(--secondary-text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-tag {
+            background-color: var(--secondary-background);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            position: relative;
+            transition: all var(--transition-speed) var(--transition-timing);
+        }
+        
+        .read-more::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-speed) var(--transition-timing);
+        }
+        
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+        
+        .read-more:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+            background-color: var(--secondary-color);
+        }
+        
+        .full-blog {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--background-color);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .full-blog h1 {
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-text-color);
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .blog-content h2, .blog-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--secondary-text-color);
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius-md);
+        }
+        
+        .blog-content code {
+            background-color: var(--secondary-background);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--border-radius-sm);
+            font-family: monospace;
+        }
+        
+        .blog-content pre {
+            background-color: var(--secondary-background);
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .blog-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .copy-button:hover {
+            opacity: 1;
+        }
+        
+        .code-container {
+            position: relative;
+        }
+        
+        .back-to-blogs {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .back-to-blogs i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Krishchal<span class="accent">Regmi</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#education" class="nav-link">Education</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="blogs.html" class="nav-link active">Blogs</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="menu-toggle">
+                <button id="menu-toggle-btn" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-header">
+            <div class="container">
+                <h1 class="blog-title">Blogs & Articles</h1>
+                <p class="blog-subtitle">Sharing my thoughts, learnings, and experiences in the world of software development</p>
+            </div>
+        </section>
+
+        <section class="blogs-container">
+            <!-- Blog Post -->
+            <div class="blog-card">
+                <div class="blog-content">
+                    <p class="blog-date">April 25, 2025</p>
+                    <h3>Building Scalable RESTful APIs with Node.js and Express</h3>
+                    <p class="blog-excerpt">In this comprehensive guide, I'll walk you through the process of building scalable and maintainable RESTful APIs using Node.js and Express. We'll cover best practices, authentication strategies, error handling, and more.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Node.js</span>
+                        <span class="blog-tag">Express</span>
+                        <span class="blog-tag">REST API</span>
+                        <span class="blog-tag">Backend</span>
+                    </div>
+                    <a href="#full-blog" class="read-more" onclick="showFullBlog()">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Full Blog Content (Hidden by default) -->
+            <div id="full-blog" class="full-blog" style="display: none;">
+                <h1>Building Scalable RESTful APIs with Node.js and Express</h1>
+                <div class="blog-meta">
+                    <div class="blog-author">
+                        <div class="author-avatar">
+                            <img src="assets/images/profile.jpg" alt="Krishchal Regmi">
+                        </div>
+                        <span>Krishchal Regmi</span>
+                    </div>
+                    <span>|</span>
+                    <span>April 25, 2025</span>
+                </div>
+                
+                <div class="blog-content">
+                    <p>RESTful APIs are the backbone of modern web applications, enabling seamless communication between frontend and backend systems. In this article, I'll share my experience building robust and scalable APIs using Node.js and Express.</p>
+                    
+                    <h2>Getting Started with Express</h2>
+                    <p>Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. Setting up a basic Express server is straightforward:</p>
+                    
+                    <pre><code>const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});</code></pre>
+                    
+                    <h2>Structuring Your API</h2>
+                    <p>As your API grows, organization becomes crucial. I recommend using a modular approach with separate files for routes, controllers, models, and middleware:</p>
+                    
+                    <pre><code>project/
+  ├── config/
+  ├── controllers/
+  ├── models/
+  ├── routes/
+  ├── middleware/
+  ├── utils/
+  ├── app.js
+  └── server.js</code></pre>
+                    
+                    <h2>Authentication and Authorization</h2>
+                    <p>Security is paramount when building APIs. Implementing JWT (JSON Web Tokens) for authentication provides a stateless and secure way to authenticate users:</p>
+                    
+                    <pre><code>const jwt = require('jsonwebtoken');
+
+// Generate token
+const generateToken = (user) => {
+  return jwt.sign(
+    { id: user.id, email: user.email },
+    process.env.JWT_SECRET,
+    { expiresIn: '30d' }
+  );
+};
+
+// Auth middleware
+const protect = async (req, res, next) => {
+  let token;
+  
+  if (req.headers.authorization && 
+      req.headers.authorization.startsWith('Bearer')) {
+    try {
+      token = req.headers.authorization.split(' ')[1];
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = await User.findById(decoded.id).select('-password');
+      next();
+    } catch (error) {
+      res.status(401).json({ message: 'Not authorized' });
+    }
+  }
+  
+  if (!token) {
+    res.status(401).json({ message: 'Not authorized, no token' });
+  }
+};</code></pre>
+                    
+                    <h2>Error Handling</h2>
+                    <p>Proper error handling ensures your API remains robust even when things go wrong. I create a centralized error handler middleware:</p>
+                    
+                    <pre><code>// Custom error class
+class AppError extends Error {
+  constructor(message, statusCode) {
+    super(message);
+    this.statusCode = statusCode;
+    this.status = `${statusCode}`.startsWith('4') ? 'fail' : 'error';
+    this.isOperational = true;
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+
+// Error handler middleware
+const errorHandler = (err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
+  
+  if (process.env.NODE_ENV === 'development') {
+    res.status(err.statusCode).json({
+      status: err.status,
+      error: err,
+      message: err.message,
+      stack: err.stack
+    });
+  } else if (process.env.NODE_ENV === 'production') {
+    if (err.isOperational) {
+      res.status(err.statusCode).json({
+        status: err.status,
+        message: err.message
+      });
+    } else {
+      console.error('ERROR 💥', err);
+      res.status(500).json({
+        status: 'error',
+        message: 'Something went wrong'
+      });
+    }
+  }
+};</code></pre>
+                    
+                    <h2>Request Validation</h2>
+                    <p>Validating incoming requests helps prevent bad data from entering your system. Using a library like Joi makes this process simple:</p>
+                    
+                    <pre><code>const Joi = require('joi');
+
+const validateUser = (req, res, next) => {
+  const schema = Joi.object({
+    name: Joi.string().min(3).max(50).required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).required()
+  });
+  
+  const { error } = schema.validate(req.body);
+  if (error) {
+    return res.status(400).json({ message: error.details[0].message });
+  }
+  
+  next();
+};</code></pre>
+                    
+                    <h2>Rate Limiting</h2>
+                    <p>To protect your API from abuse, implementing rate limiting is essential:</p>
+                    
+                    <pre><code>const rateLimit = require('express-rate-limit');
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: 'Too many requests, please try again later'
+});
+
+app.use('/api', apiLimiter);</code></pre>
+                    
+                    <h2>Documentation</h2>
+                    <p>A well-documented API is more accessible to other developers. I use Swagger to generate interactive documentation:</p>
+                    
+                    <pre><code>const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'My API',
+      version: '1.0.0',
+      description: 'API Documentation'
+    },
+    servers: [
+      {
+        url: 'http://localhost:5000'
+      }
+    ]
+  },
+  apis: ['./routes/*.js']
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));</code></pre>
+                    
+                    <h2>Conclusion</h2>
+                    <p>Building a scalable RESTful API with Node.js and Express involves more than just handling HTTP requests. It requires careful attention to architecture, security, error handling, and performance. By following these best practices, you can create a robust API that serves as a solid foundation for your applications.</p>
+                    
+                    <p>In future articles, I'll dive deeper into advanced topics like caching strategies, database optimization, and microservices architecture. Stay tuned!</p>
+                </div>
+                
+                <a href="blogs.html" class="back-to-blogs"><i class="fas fa-arrow-left"></i>Back to Blogs</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2025 Krishchal Regmi. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="resume-download">
+        <a href="assets/resume/Krishchal_Regmi_Resume.pdf" download="Krishchal_Regmi_Resume.pdf" class="btn download-btn">
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+        function showFullBlog() {
+            document.querySelector('.blog-card').style.display = 'none';
+            document.getElementById('full-blog').style.display = 'block';
+            window.scrollTo(0, 0);
+            
+            // Add copy buttons to code blocks after showing the blog
+            addCopyButtonsToCodeBlocks();
+        }
+        
+        function addCopyButtonsToCodeBlocks() {
+            const codeBlocks = document.querySelectorAll('pre');
+            
+            codeBlocks.forEach((codeBlock, index) => {
+                // Create copy button
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-button';
+                copyButton.textContent = 'Copy';
+                copyButton.setAttribute('aria-label', 'Copy code to clipboard');
+                copyButton.setAttribute('data-index', index);
+                
+                // Add button to code block
+                codeBlock.appendChild(copyButton);
+                
+                // Add click event
+                copyButton.addEventListener('click', function() {
+                    const code = this.parentElement.querySelector('code').innerText;
+                    copyToClipboard(code, this);
+                });
+            });
+        }
+        
+        function copyToClipboard(text, button) {
+            // Create a temporary textarea element
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            
+            // Select and copy the text
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove the textarea
+            document.body.removeChild(textarea);
+            
+            // Provide visual feedback
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.backgroundColor = '#4cc9f0'; // Change color to indicate success
+            
+            // Reset button after a delay
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
+            }, 2000);
+        }
+        
+        // Initialize copy buttons when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Only add buttons if the blog is visible
+            if (document.getElementById('full-blog').style.display !== 'none') {
+                addCopyButtonsToCodeBlocks();
+            }
+        });
+    </script>
+</body>
+</html>

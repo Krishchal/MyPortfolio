@@ -1,0 +1,235 @@
+/* 
+* Responsive Stylesheet
+* Author: Krishchal Regmi
+* Version: 1.0
+*/
+
+/* =========== Responsive Styles =========== */
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .projects-content {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.25rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .skills-content,
+    .projects-content {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--background-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-speed) var(--transition-timing);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 0.75rem 2rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    #menu-toggle-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1.25rem;
+        color: var(--text-color);
+        transition: color var(--transition-speed) var(--transition-timing);
+    }
+    
+    #menu-toggle-btn:hover {
+        color: var(--primary-color);
+    }
+    
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-image {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .education-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .skill-items,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .resume-download {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .download-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices (portrait phones, less than 376px) */
+@media (max-width: 375px) {
+    .navbar {
+        padding: 0.75rem 5%;
+    }
+    
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    
+    .social-links {
+        gap: var(--spacing-sm);
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+}

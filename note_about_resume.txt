@@ -1,0 +1,12 @@
+IMPORTANT NOTE ABOUT RESUME FILE
+
+Since this is a GitHub Pages deployment, you'll need to manually add your resume PDF file:
+
+1. Create a folder named "assets/resume" in your repository if it doesn't exist
+2. Upload your resume PDF file to this folder
+3. Name the file "Krishchal_Regmi_Resume.pdf" to match the download link in the HTML
+
+The resume download button in the bottom-right corner of the website is already configured to link to this file location.
+
+If you want to use a different filename, make sure to update the href attribute in the HTML:
+<a href="assets/resume/YOUR_FILENAME.pdf" download="YOUR_FILENAME.pdf" class="btn download-btn">
